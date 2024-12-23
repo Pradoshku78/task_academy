@@ -6,6 +6,8 @@ const router = express.Router();
 
 router.post('/register', registerLead);
 router.post('/login', loginLead);
-router.get('/high-quality-leads', authenticate, getHighQualityLeads);
+router.get('/high-quality-leads',
+     //authenticate,
+     getHighQualityLeads);
 
 module.exports = router;

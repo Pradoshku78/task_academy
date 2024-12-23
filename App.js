@@ -14,3 +14,15 @@ const PORT = process.env.PORT || 3000;
 sequelize.sync().then(() => {
   app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 });
+
+
+const fetchCampaigns = require('./queries/campaigns');
+
+(async () => {
+  try {
+    console.log('Fetching campaigns...');
+    await fetchCampaigns();
+  } catch (error) {
+    console.error('Error:', error.message);
+  }
+})();
